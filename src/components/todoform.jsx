@@ -13,9 +13,12 @@ export const ToDoForm = ({
   EditStatus,
   EditId,
 }) => {
+  //changing value in input box
   const changeInputValue = (event) => {
     setInputValue(event.target.value);
   };
+
+  // adding new task
   const addtask = (event) => {
     event.preventDefault();
     if (EditStatus) {
@@ -40,6 +43,7 @@ export const ToDoForm = ({
     }
   };
 
+  // changing checkbox status for completed tasks
   const changeCompletedTask = (event) => {
     if (event.target.checked) {
       setCompletedStatus(1);
@@ -48,6 +52,7 @@ export const ToDoForm = ({
     }
   };
 
+  // changing checkbox status for pending task
   const changePendingTask = (event) => {
     if (event.target.checked) {
       setPendingStatus(1);
@@ -55,6 +60,7 @@ export const ToDoForm = ({
       setPendingStatus(0);
     }
   };
+
   return (
     <>
       <form onSubmit={addtask}>

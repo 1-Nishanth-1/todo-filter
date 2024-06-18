@@ -10,6 +10,7 @@ export const ToDoList = ({
   PendingStatus,
   CompletedStatus,
 }) => {
+  // changing status to completed task
   const changestatus = (id) => {
     setToDoArray(
       ToDoArray.map((item) => {
@@ -22,12 +23,14 @@ export const ToDoList = ({
     );
   };
 
+  //changing edit status
   const edit = (id) => {
     setEditStatus(true);
     setInputValue(ToDoArray.find((item) => item.id === id).task);
     setEditId(id);
   };
 
+  // creating filtered array on the basis on checkboxes ticked
   const filteredToDoArray = ToDoArray.filter((item) => {
     if (PendingStatus && !CompletedStatus) {
       return item.completed === false;
